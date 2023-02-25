@@ -11,6 +11,7 @@
           "AWSSDK.Lambda": "3.7.104.20",
           "AWSSDK.SQS": "3.7.100.79",
           "Amazon.Lambda.Core": "2.1.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.0-preview.1.23112.2",
           "Newtonsoft.Json": "13.0.3-beta1",
           "SendGrid": "9.28.1",
@@ -56,6 +57,14 @@
           "lib/netcoreapp3.1/AWSSDK.SQS.dll": {
             "assemblyVersion": "3.3.0.0",
             "fileVersion": "3.7.100.79"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.7710.5690"
           }
         }
       },
@@ -268,6 +277,13 @@
       "sha512": "sha512-0g4UW2KR8bJV6OsvNH4qKHLSRF5W9KQlB0ShYRYMQlY1IpNIvbI0KZXAVhYmYAAYo59stbwkbxX+pFaLMZ1VMg==",
       "path": "awssdk.sqs/3.7.100.79",
       "hashPath": "awssdk.sqs.3.7.100.79.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mN9IARvNpHMBD2/oGmp5Bxp1Dg45Hfcp+LWaAyTtL2HisWLMOIcf0Ox1qW9IvCvdbHM+2A9dWEInhiqBsNxsJA==",
+      "path": "microsoft.aspnetcore.mvc.versioning/5.0.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/8.0.0-preview.1.23112.2": {
       "type": "package",

@@ -19,7 +19,8 @@ using Amazon.SQS.Model;
 namespace comms_service.Application.Controllers{
 
     [ApiController]
-    [Route("/api/{version}/sendemail")]
+    [Route("/api/v{version:apiVersion}/sendemail")]
+    [ApiVersion("1.0")]
 
     public class SendEmailController : ControllerBase
     {

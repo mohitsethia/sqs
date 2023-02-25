@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O08LyVf4yDwwP6kXTaOlrawZzK+woT5rX8vGVp0pBb0Zkfa2zpoF4/Lkv4jnOvlre/hH5zzdpxfAKT/SYa953w==",
+  "dgSpecHash": "jOFYpBjTo0DQPYCccnOoUq83l6dNNW3wN7bdHBGtBncu/L3pBVxHGvxiGbqqc3APFT8qJ4WCu2Tc1BvksmHJPQ==",
   "success": true,
   "projectFilePath": "/Users/mohitsethia/Documents/comms_service/src/comms_service.Application/comms_service.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/mohitsethia/.nuget/packages/awssdk.core/3.7.105.8/awssdk.core.3.7.105.8.nupkg.sha512",
     "/Users/mohitsethia/.nuget/packages/awssdk.lambda/3.7.104.20/awssdk.lambda.3.7.104.20.nupkg.sha512",
     "/Users/mohitsethia/.nuget/packages/awssdk.sqs/3.7.100.79/awssdk.sqs.3.7.100.79.nupkg.sha512",
+    "/Users/mohitsethia/.nuget/packages/microsoft.aspnetcore.mvc.versioning/5.0.0/microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "/Users/mohitsethia/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0-preview.1.23112.2/microsoft.aspnetcore.openapi.8.0.0-preview.1.23112.2.nupkg.sha512",
     "/Users/mohitsethia/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/mohitsethia/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",

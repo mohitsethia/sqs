@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.0-preview.1.23112.2, )"
