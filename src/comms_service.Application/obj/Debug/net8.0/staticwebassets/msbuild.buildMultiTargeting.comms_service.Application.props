@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/comms_service.Application.props" />
+</Project>

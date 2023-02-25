@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ap+gQh0k/AjoWgc617qDO/lbC0rBpqdVvTTYSe4olK4=",
+  "Source": "comms_service.Application",
+  "BasePath": "_content/comms_service.Application",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
