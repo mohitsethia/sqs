@@ -12,9 +12,14 @@ using Amazon.Lambda;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Model;
 using Amazon.Runtime;
+using Amazon.SecretsManager;
+using Amazon.SecretsManager.Model;
 using comms_service.Application.Service;
 using Amazon.SQS;
 using Amazon.SQS.Model;
+using comms_service.Application.Configs;
+using comms_service.Application.helper;
+using comms_service.Application.Infrastructure;
 
 namespace comms_service.Application.Controllers{
 
@@ -25,41 +30,33 @@ namespace comms_service.Application.Controllers{
     public class SendEmailController : ControllerBase
     {
         private readonly ILogger<SendEmailController> _logger;
-        private readonly IConfigurationSection app_settings = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("AppSettings");
-
-        public SendEmailController(ILogger<SendEmailController> logger) {
+        private readonly AmazonSQSClient _sqsClient;
+        public SendEmailController(ILogger<SendEmailController> logger, IAmazonSecretsManager secretsManager) {
             _logger = logger;
+            var _appSettings = new AppSettings(secretsManager);
+            _sqsClient = AmazonSQS.GetSQSClient();
         }
 
         [HttpPost]
-        public ActionResult<ResponseDTO> SendEmail(SendEmailRequestDTO req)
+        public async Task<ResponseDTO> SendEmail(SendEmailRequestDTO req)
         {
             var senderEmail = $"{req.SenderEmail}";
-            var senderName = $"{req.SenderName}";
             var receiverEmail = $"{req.ReceiverEmail}";
-            var receiverName = $"{req.ReceiverName}";
             
-            if(senderEmail == "" || senderName == "" || receiverEmail == "" || receiverName == "")
+            if(senderEmail == "" || receiverEmail == "")
             {
                 var e = new ResponseDTO
                 {
                     status_code = 400,
                     message = "please fill in all the details"
                 };
-                return BadRequest(e);
+                return e;
             }
 
-            var accessKeyID = app_settings["AccessKeyID"];
-            var secretKey = app_settings["SecretAccessKey"];
-            var credentials = new BasicAWSCredentials(accessKeyID, secretKey);
-            var sqsClient = new AmazonSQSClient(credentials, RegionEndpoint.USEast1);
-            var queueUrl = "https://sqs.us-east-1.amazonaws.com/363402790710/testqueue";
-
-            var body = "Hey there, how are you doing?";
             var request = new SendMessageRequest
             {
-                QueueUrl = queueUrl,
-                MessageBody = body,
+                QueueUrl = AppSettings.GetQueueUrl(),
+                MessageBody = req.Body,
                 MessageAttributes = new Dictionary<string, MessageAttributeValue>
                 {
                     {
@@ -75,35 +72,35 @@ namespace comms_service.Application.Controllers{
                         }
                     },
                     {
-                        "sendFromName", new MessageAttributeValue
+                        "emailSubject", new MessageAttributeValue
                         {
-                            DataType = "String", StringValue = senderName
+                            DataType = "String", StringValue = req.Subject
                         }
                     },
                     {
-                        "sendToName", new MessageAttributeValue
+                        "htmlBody", new MessageAttributeValue
                         {
-                            DataType = "String", StringValue = receiverName
+                            DataType = "String", StringValue = req.htmlBody
+                        }
+                    },
+                    {
+                        "textBody", new MessageAttributeValue
+                        {
+                            DataType = "String", StringValue = req.textBody
                         }
                     }
                 }
             };
 
-            var response = sqsClient.SendMessageAsync(request);
-            var status = (int)response.Result.HttpStatusCode;
+            // Console.WriteLine($"{JsonConvert.SerializeObject(request)}");
+            var response = await _sqsClient.SendMessageAsync(request);
+            var status = (int)response.HttpStatusCode;
             var res = new ResponseDTO
             {
                 status_code = status,
                 message = (status >= 200 && status < 300) ? "successfully sent the message" : (status >= 400 && status < 500 ? "User Error" : "Internal Server Error")
             };
-            return Ok(res);
-
-            // var r = new SendEmailService();
-            // var response = r.SendEmail(name, email);
-            // Console.WriteLine($"printing the response result: '{JsonConvert.SerializeObject(response.Result)}'");
-            // var result = new SendEmailDTO{status_code=(int)response.Result.StatusCode,
-            // message=$"email successfully sent to {name} in the email address {email}"};
-            // return Ok(result);
+            return res;
         }
     }
 }

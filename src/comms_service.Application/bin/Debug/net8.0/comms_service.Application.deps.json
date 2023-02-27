@@ -10,6 +10,8 @@
         "dependencies": {
           "AWSSDK.Lambda": "3.7.104.20",
           "AWSSDK.SQS": "3.7.100.79",
+          "AWSSDK.SecretsManager.Caching": "1.0.5",
+          "AWSSDK.SimpleEmail": "3.7.100.79",
           "Amazon.Lambda.Core": "2.1.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.0-preview.1.23112.2",
@@ -49,6 +51,40 @@
           }
         }
       },
+      "AWSSDK.SecretsManager/3.7.2.59": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.105.8"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.2.59"
+          }
+        }
+      },
+      "AWSSDK.SecretsManager.Caching/1.0.5": {
+        "dependencies": {
+          "AWSSDK.SecretsManager": "3.7.2.59",
+          "Microsoft.Extensions.Caching.Memory": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.SecretsManager.Extensions.Caching.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AWSSDK.SimpleEmail/3.7.100.79": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.105.8"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleEmail.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.100.79"
+          }
+        }
+      },
       "AWSSDK.SQS/3.7.100.79": {
         "dependencies": {
           "AWSSDK.Core": "3.7.105.8"
@@ -80,6 +116,32 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
+      "Microsoft.Extensions.Caching.Abstractions/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.2.0": {},
+      "Microsoft.Extensions.Options/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Primitives": "2.2.0",
+          "System.ComponentModel.Annotations": "4.5.0"
+        }
+      },
+      "Microsoft.Extensions.Primitives/2.2.0": {
+        "dependencies": {
+          "System.Memory": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.1"
+        }
+      },
       "Microsoft.OpenApi/1.4.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -170,6 +232,7 @@
           }
         }
       },
+      "System.ComponentModel.Annotations/4.5.0": {},
       "System.Configuration.ConfigurationManager/8.0.0-preview.1.23110.8": {
         "dependencies": {
           "System.Diagnostics.EventLog": "8.0.0-preview.1.23110.8",
@@ -204,6 +267,8 @@
           }
         }
       },
+      "System.Memory/4.5.1": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.1": {},
       "System.Security.Cryptography.ProtectedData/8.0.0-preview.1.23110.8": {
         "runtime": {
           "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
@@ -271,6 +336,27 @@
       "path": "awssdk.lambda/3.7.104.20",
       "hashPath": "awssdk.lambda.3.7.104.20.nupkg.sha512"
     },
+    "AWSSDK.SecretsManager/3.7.2.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WVR7q4sFbmVBbJgGgFZdqMFCjf9ZJOuVQsAt6UCZcUHzA3Y09aYWASOq1huNowGNUdDt7WaztRsOFeJKyrhkjA==",
+      "path": "awssdk.secretsmanager/3.7.2.59",
+      "hashPath": "awssdk.secretsmanager.3.7.2.59.nupkg.sha512"
+    },
+    "AWSSDK.SecretsManager.Caching/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-86hD95wnJQQQf+hoc4yDmUEKtTGeGcAdcJPn0XmcjtDdCnBTHXbNh9sBux4VWoYcK9OyaWEZGKiXE6/sLXg8wQ==",
+      "path": "awssdk.secretsmanager.caching/1.0.5",
+      "hashPath": "awssdk.secretsmanager.caching.1.0.5.nupkg.sha512"
+    },
+    "AWSSDK.SimpleEmail/3.7.100.79": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s48DqlZ3ILayTtOim9r5GjM7Qzlm9XKklazyN861V2gZsbqP6qXF7UhoKcUHA+51EnPgvWF5UEIG0zDvaY8e6g==",
+      "path": "awssdk.simpleemail/3.7.100.79",
+      "hashPath": "awssdk.simpleemail.3.7.100.79.nupkg.sha512"
+    },
     "AWSSDK.SQS/3.7.100.79": {
       "type": "package",
       "serviceable": true,
@@ -298,6 +384,41 @@
       "sha512": "sha512-Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "path": "microsoft.extensions.apidescription.server/6.0.5",
       "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-spsJkYo8gGJapaxTSQFN/wqA+ghpJMLwB4ZyTB+fSdpd7AmMFP/YSpIcGmczcw4KggpxLGhLk7lCkSIlgvHaqQ==",
+      "path": "microsoft.extensions.caching.abstractions/2.2.0",
+      "hashPath": "microsoft.extensions.caching.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Memory/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yFs44RzB2Pzfoj4uk+mEz3MTTQKyeWb8gDhv5GyVPfHnLv0eQhGwzbw/5WpxAcVyOgG/H3/0ULY6g0/7/B+r7w==",
+      "path": "microsoft.extensions.caching.memory/2.2.0",
+      "hashPath": "microsoft.extensions.caching.memory.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f9hstgjVmr6rmrfGSpfsVOl2irKAgr1QjrSi3FgnS7kulxband50f2brRLwySAQTADPZeTdow0mpSMcoAdadCw==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/2.2.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UpZLNLBpIZ0GTebShui7xXYh6DmBHjWM8NxGxZbdQh/bPZ5e6YswqI+bru6BnEL5eWiOdodsXtEz3FROcgi/qg==",
+      "path": "microsoft.extensions.options/2.2.0",
+      "hashPath": "microsoft.extensions.options.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-azyQtqbm4fSaDzZHD/J+V6oWMFaf2tWP4WEGIYePLCMw3+b2RQdj9ybgbQyjCshcitQKQ4lEDOZjmSlTTrHxUg==",
+      "path": "microsoft.extensions.primitives/2.2.0",
+      "hashPath": "microsoft.extensions.primitives.2.2.0.nupkg.sha512"
     },
     "Microsoft.OpenApi/1.4.3": {
       "type": "package",
@@ -362,6 +483,13 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
     },
+    "System.ComponentModel.Annotations/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
+      "path": "system.componentmodel.annotations/4.5.0",
+      "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
+    },
     "System.Configuration.ConfigurationManager/8.0.0-preview.1.23110.8": {
       "type": "package",
       "serviceable": true,
@@ -382,6 +510,20 @@
       "sha512": "sha512-kA337mAa3AFWkkQyYmNxtBdVvK5O6O+9V2TrXGIP2oZ4rInxqHs36MzKh7MaRD9TJ9VP4w7RYy9AQFg1Q4UbUA==",
       "path": "system.drawing.common/8.0.0-preview.1.23110.8",
       "hashPath": "system.drawing.common.8.0.0-preview.1.23110.8.nupkg.sha512"
+    },
+    "System.Memory/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sDJYJpGtTgx+23Ayu5euxG5mAXWdkDb4+b0rD0Cab0M1oQS9H0HXGPriKcqpXuiJDTV7fTp/d+fMDJmnr6sNvA==",
+      "path": "system.memory/4.5.1",
+      "hashPath": "system.memory.4.5.1.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
     },
     "System.Security.Cryptography.ProtectedData/8.0.0-preview.1.23110.8": {
       "type": "package",

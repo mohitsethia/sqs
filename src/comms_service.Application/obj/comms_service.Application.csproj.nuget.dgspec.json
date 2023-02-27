@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[3.7.100.79, )"
             },
+            "AWSSDK.SecretsManager.Caching": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "AWSSDK.SimpleEmail": {
+              "target": "Package",
+              "version": "[3.7.100.79, )"
+            },
             "Amazon.Lambda.Core": {
               "target": "Package",
               "version": "[2.1.0, )"

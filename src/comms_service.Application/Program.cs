@@ -1,4 +1,7 @@
 // using System.Configuration;
+
+using Amazon;
+using Amazon.SecretsManager;
 using comms_service.Application.helper;
 using Configuration = Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -18,6 +21,9 @@ builder.Services.AddApiVersioning(opt =>
     opt.ReportApiVersions = true;
     opt.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader());
 });
+builder.Services.AddScoped<IAmazonSecretsManager>(a =>
+    new AmazonSecretsManagerClient(RegionEndpoint.APSoutheast1)
+);
 
 var app = builder.Build();
 

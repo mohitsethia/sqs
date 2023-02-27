@@ -48,3 +48,6 @@
 /Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll
 /Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Windows.Extensions.dll
 /Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.dll
+/Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/AWSSDK.SecretsManager.dll
+/Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/Amazon.SecretsManager.Extensions.Caching.dll
+/Users/mohitsethia/Documents/comms_service/src/comms_service.Application/bin/Debug/net8.0/AWSSDK.SimpleEmail.dll

@@ -20,6 +20,8 @@
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">/Users/mohitsethia/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
     <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">/Users/mohitsethia/.nuget/packages/awssdk.core/3.7.105.8</PkgAWSSDK_Core>
     <PkgAWSSDK_SQS Condition=" '$(PkgAWSSDK_SQS)' == '' ">/Users/mohitsethia/.nuget/packages/awssdk.sqs/3.7.100.79</PkgAWSSDK_SQS>
+    <PkgAWSSDK_SimpleEmail Condition=" '$(PkgAWSSDK_SimpleEmail)' == '' ">/Users/mohitsethia/.nuget/packages/awssdk.simpleemail/3.7.100.79</PkgAWSSDK_SimpleEmail>
+    <PkgAWSSDK_SecretsManager Condition=" '$(PkgAWSSDK_SecretsManager)' == '' ">/Users/mohitsethia/.nuget/packages/awssdk.secretsmanager/3.7.2.59</PkgAWSSDK_SecretsManager>
     <PkgAWSSDK_Lambda Condition=" '$(PkgAWSSDK_Lambda)' == '' ">/Users/mohitsethia/.nuget/packages/awssdk.lambda/3.7.104.20</PkgAWSSDK_Lambda>
   </PropertyGroup>
 </Project>
