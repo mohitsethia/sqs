@@ -88,6 +88,12 @@ namespace comms_service.Application.Controllers{
                         {
                             DataType = "String", StringValue = req.textBody
                         }
+                    },
+                    {
+                        "eventType", new MessageAttributeValue
+                        {
+                            DataType = "String", StringValue = "sendEmail"
+                        }
                     }
                 }
             };

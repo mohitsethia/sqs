@@ -51,6 +51,12 @@ namespace comms_service.Application.Controllers
                         {
                             DataType = "String", StringValue = req.templateData
                         }
+                    },
+                    {
+                        "eventType", new MessageAttributeValue
+                        {
+                            DataType = "String", StringValue = "sendTemplatedEmail"
+                        }
                     }
                 }
             };
